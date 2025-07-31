@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
+</head>
+<body>
+  <div>
+    <h1 class="titulo-login">Inicio de Sesión</h1>
+<div class="login-container">
+    <h2>Bienvenido</h2>
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <label for="username">Usuario</label>
+  <input type="text" name="username" required placeholder="Ingrese Usuario">
+
+ <label for="email">Correo electrónico</label>
+    <input type="email" required placeholder="Ingrese Correo electronico" name="email" >
+
+ <label for="password">Contraseña</label>
+  <input type="password" name="password" required placeholder="Ingrese Contraseña">
+
+    <form action="{% url 'index' %}">
+  <button type="submit">Ingresar</button>
+</form>
+
+
+
+</form>
+
+<!-- Crear usuario -->
+<form action="{% url 'crear_usuario' %}">
+  <button type="submit">Crear usuario</button>
+</form>
+
+    <div style="text-align: center; margin-top: 10px;">
+  <a href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a>
+</div>
+
+
+
+
+
+  </div>
+  </div>
+</body>
+</html>

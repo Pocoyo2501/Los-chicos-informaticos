@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Usuario</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/css/usuario.css' %}">
+</head>
+<body>
+<div class="registro-usuario">
+  <h2>Registro de Usuario</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Usuario</button>
+  </form>
+  <a class="link" href="{% url 'login' %}">Volver al login</a>  
+</div>
+  
+</body>
+</html>
